@@ -1,0 +1,41 @@
+﻿@model ContactViewModel
+@{
+	ViewData[ "Title" ] = "Contact";
+}
+<h3>Send E-mail In ASP.Net Core</h3>
+
+<div class="has-error" col-md-12>
+	<form method="post" asp-page="/Contact">
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label asp-for="Name">Name:</label>
+				<input asp-for="Name" class="form-control" />
+				<span asp-validation-for="Name" class="text-muted"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label asp-for="Email">Email:</label>
+				<input asp-for="Email" class="form-control" />
+				<span asp-validation-for="Email" class="text-muted"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label asp-for="Subject">Subject:</label>
+				<input asp-for="Subject" class="form-control" />
+				<span asp-validation-for="Subject" class="text-muted"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-6">
+				<label asp-for="Message">Message:</label>
+				<textarea rows="8" cols="20" asp-for="Message" class="form-control"></textarea>
+				<span asp-validation-for="Message" class="text-muted"></span>
+			</div>
+		</div>
+		<div>
+			<button type="submit" class="btn btn-success" asp-page-handler="SendEmail">Send Message</button>
+		</div>
+	</form>
+</div>
